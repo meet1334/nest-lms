@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { RegisterDto } from 'src/auth/dto/registerUser.dto';
 import { User } from './schemas/user.schema';
 import { Model } from 'mongoose';
+import { LoginDto } from 'src/auth/dto/loginUser.dto';
 
 @Injectable()
 export class UserService {
@@ -23,5 +24,9 @@ export class UserService {
 
             throw error;
         }
+    }
+
+    async findByEmail(loginUserDto: LoginDto) {
+        return await this.UserModel.findOne({ email: loginUserDto.email });
     }
 }
