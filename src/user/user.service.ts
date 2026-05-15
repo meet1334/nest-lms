@@ -29,4 +29,8 @@ export class UserService {
     async findByEmail(loginUserDto: LoginDto) {
         return await this.UserModel.findOne({ email: loginUserDto.email });
     }
+
+    async getUserById(id: string) {
+        return await this.UserModel.findOne({ _id: id });
+    }
 }

@@ -20,8 +20,7 @@ export class AuthService {
 
         const payload = { sub: user._id, email: user.email }
         const token = await this.jwtService.signAsync(payload);
-        console.log(token)
-        return token
+        return { access_token: token }
     }
 
     async loginUser(loginUserDto: LoginDto) {
@@ -35,7 +34,7 @@ export class AuthService {
         if (isPswdCorrect) {
             const payload = { sub: userDetails._id, email: userDetails.email }
             const token = await this.jwtService.signAsync(payload);
-            return { accesstoken: token }
+            return { access_token: token }
         } else {
             throw new UnauthorizedException('Login credentials are not valid');
         }
