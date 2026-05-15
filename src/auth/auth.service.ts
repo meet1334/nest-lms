@@ -32,7 +32,7 @@ export class AuthService {
 
         const isPswdCorrect = await bcrypt.compare(loginUserDto.password, userDetails.password);
         if (isPswdCorrect) {
-            const payload = { sub: userDetails._id, email: userDetails.email }
+            const payload = { sub: userDetails._id, email: userDetails.email, role: userDetails.role }
             const token = await this.jwtService.signAsync(payload);
             return { access_token: token }
         } else {
