@@ -1,3 +1,7 @@
+
+MONGODB_URL=mongodb://localhost:27017/nest-lms
+JWT_SECRET=wuvnd9@@%^*%^*8f84r2jf@@%^*%^*fim20c33232@@%^*%^*2f23113442
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
